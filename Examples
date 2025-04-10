@@ -1,0 +1,30 @@
+//chp 23 Destructing Declarations
+
+data class Person( val id:Int,val name: String, val age: Int) //destructing declaration
+
+class MyClass (val x:Int,val y: String) { //custom classes
+     operator fun component1():Int = x
+     operator fun component2():String = y
+}
+
+fun main(args: Array<String>) {
+ val person = Person(1,"J D", 30)//destructing declarations
+    val (id, name, age) = person
+    println(" Id:$id, Name:$name, Age:$age")
+    
+
+     val colors = arrayOf("red", "yellow", "blue", "pink", "purple") //Arrays
+     val (first,second,third,fourth,fifth) = colors
+     println("$first $second $third $fourth $fifth")
+    
+
+     val obj = MyClass(10,"Hello") //custom classes
+     val (num,str) = obj
+     println("$num $str")
+
+     val pairs = listOf(Pair(1, "One"), Pair(2,"Two"))
+     pairs.forEach { (num,text)->
+          println("$num $text")
+
+     }
+}
